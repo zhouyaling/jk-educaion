@@ -1,0 +1,96 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #FFFFFF;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    font-size: 0.14rem;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.title {
+    font-size: 0.19rem;
+    color: #1b0f10;
+    letter-spacing: 0.24px;
+    line-height: 0.28rem;
+}
+
+.sub-title {
+    font-size: 0.11rem;
+    color: #999999;
+    letter-spacing: 0.17px;
+}
+
+.title-tip {
+    display: inline-block;
+    width: 0.05rem;
+    height: 0.15rem;
+    background-image: linear-gradient(-180deg, #F50245 0%, #E70121 100%);
+    border-radius: 0.05rem;
+    margin-right: 0.1rem;
+    float: left;
+    position: relative;
+    top: 0.05rem;
+}
+
+.margin-top-12 {
+    margin-top: 0.12rem;
+}
+
+@media screen and (min-width: 319px) {
+    html {
+        font-size: 85px;
+    }
+}
+
+@media screen and (min-width: 359px) {
+    html {
+        font-size: 95px;
+    }
+}
+
+@media screen and (min-width: 374px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media screen and (min-width: 413px) {
+    html {
+        font-size: 109px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    html {
+        font-size: 204px;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    html {
+        font-size: 273px;
+    }
+}
+
+html {
+    font-size: 100px;
+}
