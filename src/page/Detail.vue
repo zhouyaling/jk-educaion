@@ -64,7 +64,7 @@ export default {
       myPlayer: null,
       androidAppUrl: "pgf63h://jkcommunity", // 安卓app地址
       iosAppUrl: "pgf63h://jkcommunity", // iosApp地址
-      showPanelTip:false, // 是否显示在浏览器中打开
+      showPanelTip: false, // 是否显示在浏览器中打开
       videoInfo: {
         videoUrl: "test",
         playNum: 0,
@@ -154,7 +154,26 @@ export default {
         timer = null,
         mobelType = this.GetMobelType();
       if (mobelType.android) {
-        if (mobelType.weixin || mobelType.qq) {
+        if (mobelType.weixin) {
+          window.location.href =
+                "http://www.tq-service.com/jkpros/download/index.html";
+        } else {
+          var startTime = Date.now();
+          var ifr = document.createElement("iframe");
+          ifr.src = this.androidAppUrl;
+          ifr.style.display = "none";
+          document.body.appendChild(ifr);
+          timer = setTimeout(function() {
+            var endTime = Date.now();
+            if (!startTime || endTime - startTime < timeout + 300) {
+              document.body.removeChild(ifr);
+              window.location.href =
+                "http://www.tq-service.com/jkpros/download/index.html";
+            }
+          }, timeout);
+        }
+
+        /* if (mobelType.weixin || mobelType.qq) {
             this.showPanelTip = true;
         } else {
           var startTime = Date.now();
@@ -169,7 +188,7 @@ export default {
               window.location.href="http://www.tq-service.com/jkpros/download/index.html";
             }
           }, timeout);
-        }
+        } */
       } else if (mobelType.ios || mobelType.iPhone || mobelType.iPad) {
         window.location.href =
           "https://apps.apple.com/cn/app/%E5%A4%A7%E7%A4%BE%E5%8C%BA-%E7%BE%8E%E5%A5%BD%E9%82%BB%E9%87%8C/id1469761895";
@@ -362,23 +381,23 @@ export default {
   display: block !important;
 }
 
-.panel-tip{
-    width:100%;
-    height: 100%;
-    background:rgba(0,0,0,0.78);
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    z-index: 99999!important;
+.panel-tip {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.78);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999 !important;
 }
 
-.panel-tip img{
-    width:50%;
-    position: absolute;
-    right: 8%;
-    top:1.5%;
+.panel-tip img {
+  width: 50%;
+  position: absolute;
+  right: 8%;
+  top: 1.5%;
 }
 </style>
 
